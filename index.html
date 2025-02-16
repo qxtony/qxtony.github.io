@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>кнопка</title>
+    <title>hahaha</title>
     <style>
         body, html {
             margin: 0;
@@ -12,23 +11,46 @@
             height: 100%;
             overflow: hidden;
         }
-        button {
+        .video-container {
+            position: relative;
             width: 100%;
             height: 100%;
-            background-color: #808080;
+        }
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
             border: none;
-            color: white;
-            font-size: 24px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            z-index: 1;
         }
         button:hover {
-            background-color: #606060;
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
-    <button onclick="playAudio()">hahaha</button>
+    <div class="video-container">
+        <!-- Видеофон -->
+        <video autoplay muted loop>
+            <source src="background.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        <!-- Кнопка -->
+        <button onclick="playAudio()"></button>
+    </div>
 
     <script>
         function playAudio() {
